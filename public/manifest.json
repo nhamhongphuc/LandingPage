@@ -1,0 +1,20 @@
+{
+  "name": "Thành Tín - Rút Tiền & Đáo Hạn Thẻ Tín Dụng",
+  "short_name": "Thành Tín",
+  "description": "Dịch vụ rút tiền và đáo hạn thẻ tín dụng uy tín tại TPHCM & Bình Dương. Phí siêu thấp từ 1.3%, nhận tiền trong 5 giây, bảo mật 100%.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1f2937",
+  "theme_color": "#1f2937",
+  "orientation": "portrait-primary",
+  "lang": "vi",
+  "categories": ["finance", "business"],
+  "icons": [
+    {
+      "src": "/logo-round.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
