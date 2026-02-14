@@ -58,6 +58,34 @@ async function prerender() {
   let html = template.replace("<!--ssr-head-->", headTags);
   html = html.replace("<!--ssr-outlet-->", appHtml);
 
+  // 6b. Inline CSS to eliminate render-blocking stylesheet request
+  const cssLinkMatch = html.match(
+    /<link\s+rel="stylesheet"\s+crossorigin\s+href="(\/assets\/[^"]+\.css)">/
+  );
+  if (cssLinkMatch) {
+    const cssHref = cssLinkMatch[1]; // e.g. /assets/index-B43fXy8O.css
+    const cssFilePath = resolve(clientDir, cssHref.slice(1)); // remove leading /
+    if (existsSync(cssFilePath)) {
+      const cssContent = readFileSync(cssFilePath, "utf-8");
+      // Extract font URLs from CSS for preloading
+      const fontUrls: string[] = [];
+      const fontUrlRegex = /url\((\/assets\/inter-(?:latin|vietnamese)-(?:400|700)-normal-[^)]+\.woff2)\)/g;
+      let fontMatch;
+      while ((fontMatch = fontUrlRegex.exec(cssContent)) !== null) {
+        fontUrls.push(fontMatch[1]);
+      }
+      const fontPreloads = fontUrls
+        .map((u) => `<link rel="preload" as="font" type="font/woff2" href="${u}" crossorigin />`)
+        .join("\n    ");
+      html = html.replace(
+        cssLinkMatch[0],
+        `${fontPreloads}\n    <style>${cssContent}</style>`
+      );
+      console.log(`  ✅ Inlined CSS (${(cssContent.length / 1024).toFixed(1)} KiB) — eliminated render-blocking request`);
+      console.log(`  ✅ Added ${fontUrls.length} font preload hints`);
+    }
+  }
+
   const stateScript = `<script>window.__PRELOADED_STATE__ = ${JSON.stringify(
     preloadedState
   ).replace(/</g, "\\u003c")}</script>`;
