@@ -1,17 +1,11 @@
-import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { PHONE_RAW, PHONE_DISPLAY, ZALO_URL } from "@/utils/constants";
 
 export default function Hero() {
-  const [ref, isVisible] = useIntersectionObserver(0.1);
-
   return (
     <section
       id="home"
-      ref={ref as React.RefObject<HTMLElement>}
       aria-label="Giới thiệu dịch vụ rút tiền và đáo hạn thẻ tín dụng Thành Tín"
-      className={`hero-shape py-16 sm:py-20 text-white ${
-        isVisible ? "fade-in" : "opacity-0"
-      }`}
+      className="hero-shape py-16 sm:py-20 text-white"
     >
       <div className="hero-content container mx-auto max-w-[1200px] px-4 text-center">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">

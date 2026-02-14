@@ -25,10 +25,6 @@ export const locations: Location[] = [
   { address: "Tòa nhà S501, Vinhomes Grand Park, Q.9, TP.HCM" },
   {
     address:
-      "Tòa nhà Sacom Chip Sang, Khu Công Nghệ Cao, Phường Tân Phú, TP Thủ Đức, TP.HCM",
-  },
-  {
-    address:
       "Đường Lê Quang Định, KP Bình Khánh, P. Khánh Bình, Tân Uyên, Bình Dương",
   },
 ];
@@ -75,9 +71,8 @@ export const structuredData = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    // TODO: Add exact latitude and longitude of primary office
-    latitude: "10.8231",
-    longitude: "106.6297",
+    latitude: "10.8398",
+    longitude: "106.8372",
   },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
