@@ -12,6 +12,9 @@
       <image:loc>https://thanhtinrutdaothetindung.com/logo-round.svg</image:loc>
       <image:title>Thành Tín Logo - Dịch vụ rút tiền và đáo hạn thẻ tín dụng</image:title>
     </image:image>
-    <!-- TODO: Add og-image.png entry once the file is created -->
+    <image:image>
+      <image:loc>https://thanhtinrutdaothetindung.com/og-image.png</image:loc>
+      <image:title>Thành Tín - Rút Tiền và Đáo Hạn Thẻ Tín Dụng TPHCM Bình Dương</image:title>
+    </image:image>
   </url>
 </urlset>
