@@ -74,6 +74,40 @@ export const structuredData = {
     latitude: "10.8398",
     longitude: "106.8372",
   },
+  location: [
+    {
+      "@type": "Place",
+      name: "Thành Tín - Chi nhánh TPHCM",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Tòa nhà S501, Vinhomes Grand Park",
+        addressLocality: "Quận 9",
+        addressRegion: "TP.HCM",
+        addressCountry: "VN",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "10.8398",
+        longitude: "106.8372",
+      },
+    },
+    {
+      "@type": "Place",
+      name: "Thành Tín - Chi nhánh Bình Dương",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Đường Lê Quang Định, KP Bình Khánh",
+        addressLocality: "Khánh Bình, Tân Uyên",
+        addressRegion: "Bình Dương",
+        addressCountry: "VN",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "11.0489",
+        longitude: "106.7649",
+      },
+    },
+  ],
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: [
